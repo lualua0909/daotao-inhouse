@@ -1,0 +1,170 @@
+.procedure-wrapper {
+    padding: 30px 0 60px 0;
+    position: relative;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include responsive(575) {
+        background-image: unset !important;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(181.98deg, #002564 3.88%, rgba(54, 2, 9, 0.86) 93.99%);
+        z-index: -1;
+    }
+
+    .section-heading {
+        margin-bottom: 60px;
+
+        .section-title {
+            text-align: center;
+            font-weight: 700;
+            font-size: 34px;
+            color: #F8F8F8;
+            width: fit-content;
+            margin: 0 auto 40px auto;
+            position: relative;
+            padding-left: 20px;
+            @include responsive(575) {
+                font-size: 25px;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: -2px;
+                left: 0;
+                background: #F8F8F8;
+                width: 8px;
+                height: 50px;
+                @include responsive(575) {
+                    height: 35px;
+                    top: 0;
+                }
+            }
+        }
+
+        .subtitle {
+            font-size: 16px;
+            text-align: center;
+            letter-spacing: 0.02em;
+            color: #F8F8F8;
+            max-width: 700px;
+            margin: 0 auto;
+            @include responsive(575) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .procedure-content {
+        ul {
+            li {
+                position: relative;
+                padding-left: 100px;
+                min-height: 110px;
+                margin-bottom: 25px;
+                //@include responsive(575) {
+                //    padding-left: 0;
+                //}
+
+                &:nth-child(n+10) {
+                    .number {
+                        &:before {
+                            content: none;
+                        }
+                    }
+                }
+
+                .number {
+                    position: absolute;
+                    top: 27px;
+                    left: 0;
+                    border: 2px solid #F8F8F8;
+                    border-radius: 5px;
+                    width: 70px;
+                    height: 70px;
+                    font-weight: bold;
+                    font-size: 30px;
+                    color: #F8F8F8;
+                    @include flexbox();
+                    @include align-items(center);
+                    @include justify-content(center);
+                    //@include responsive(575) {
+                    //    position: relative;
+                    //    top: unset;
+                    //    bottom: unset;
+                    //    margin-bottom: 30px
+                    //}
+
+                    &:before {
+                        content: '0';
+                    }
+                }
+
+                .content {
+                    .procedure-title {
+                        font-weight: bold;
+                        font-size: 18px;
+                        line-height: 22px;
+                        color: #F8F8F8;
+                        text-transform: uppercase;
+                        margin-bottom: 10px;
+                        @include responsive(575) {
+                            font-size: 16px;
+                        }
+                    }
+
+                    .procedure-desc {
+                        font-size: 16px;
+                        line-height: 22px;
+                        letter-spacing: 0.02em;
+                        color: #F8F8F8;
+                        @include responsive(575) {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .procedure-img {
+        text-align: center;
+        @include responsive(991) {
+            margin-bottom: 50px;
+        }
+
+        img {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    .button-wrap {
+        text-align: center;
+        margin-top: 30px;
+
+        a {
+            display: block;
+            text-align: center;
+            background: #0015CE;
+            border-radius: 5px;
+            max-width: 188px;
+            width: 100%;
+            margin: 0 auto;
+            color: #F8F8F8;
+            font-weight: 600;
+            font-size: 18px;
+            text-transform: uppercase;
+            padding: 22px 15px;
+        }
+    }
+}

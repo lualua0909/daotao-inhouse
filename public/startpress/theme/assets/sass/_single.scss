@@ -1,0 +1,16 @@
+.single-wrapper {
+    padding: 100px 0;
+
+    .entry-title {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.4;
+        color: #193769;
+        margin-bottom: 30px;
+        @include responsive(575) {
+            font-size: 22px;
+        }
+    }
+}
+

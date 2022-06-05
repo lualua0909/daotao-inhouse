@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+@media (min-width: 1220px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1160px;
+    }
+}
+
+@import '../sass/normalize';
+@import '../sass/mixins';
+@import '../sass/header';
+@import '../sass/welcome';
+@import '../sass/why-us';
+@import '../sass/why-us-2';
+@import '../sass/team';
+@import '../sass/timeline';
+@import '../sass/study';
+//@import '../sass/elearning';
+@import '../sass/contact-form';
+@import '../sass/event';
+@import '../sass/certificate';
+@import '../sass/partner';
+@import '../sass/single';
+@import '../sass/action-button';
+@import '../sass/footer';
+
+body {
+    background: #F9F9FB;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.section-heading {
+    .section-title-style-2 {
+        font-weight: bold;
+        font-size: 64px;
+        line-height: 78px;
+        color: #193769;
+        position: relative;
+        padding-left: 35px;
+        @include responsive(1600) {
+            font-size: 50px;
+            line-height: 1;
+        }
+        @include responsive(575) {
+            font-size: 24px;
+            line-height: 29px;
+            padding-left: 11px;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 8px;
+            top: 0;
+            left: 2px;
+            bottom: -4px;
+            display: block;
+            background: #CB001B;
+            @include responsive(575) {
+                width: 4px;
+                top: 6px;
+                bottom: 0;
+            }
+        }
+
+        span {
+            color: #790D13;
+        }
+    }
+}
+
+.section-heading {
+    margin-bottom: 35px;
+
+    .section-title-style-1 {
+        text-align: center;
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 78px;
+        color: #193769;
+        @include responsive(1199) {
+            font-size: 45px;
+            line-height: 1.4;
+        }
+
+        @include responsive(991) {
+            font-size: 35px;
+        }
+
+        @include responsive(767) {
+            font-size: 24px;
+        }
+
+        &:after {
+            content: '';
+            width: 295px;
+            height: 9px;
+            display: block;
+            background: #CB001B;
+            margin: 13px auto 0 auto;
+            @include responsive(991) {
+                height: 5px;
+                width: 150px;
+                margin: 5px auto 0 auto;
+            }
+            @include responsive(767) {
+                height: 2px;
+                width: 139px;
+                margin: 5px auto 0 auto;
+            }
+        }
+    }
+}
+
+.button-effect {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &:hover {
+        &:before, &:after {
+            width: 0;
+        }
+    }
+
+    &:before, &:after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        width: 51%;
+        top: 0;
+        bottom: 0;
+        display: block;
+        @include transition(.3s all);
+    }
+
+    &:before {
+        left: 0;
+    }
+
+    &:after {
+        right: 0;
+    }
+}

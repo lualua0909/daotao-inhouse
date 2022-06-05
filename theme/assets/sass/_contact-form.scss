@@ -1,0 +1,152 @@
+.contact-form-wrapper {
+    background-color: #F9F9FB;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    background-image: url(../images/contact-bgf.png);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-attachment: fixed;
+    @include responsive(991) {
+        padding-top: 30px;
+    }
+
+    .form-wrapper {
+        form {
+            ::-webkit-input-placeholder { /* Edge */
+                color: #A9A8A8;
+            }
+
+            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: #A9A8A8;
+            }
+
+            ::placeholder {
+                color: #A9A8A8;
+            }
+
+            .form-body {
+                .input-container {
+                    margin-bottom: 23px;
+
+                    &#input-container-1-5 {
+                        label {
+                            opacity: 0;
+                        }
+                    }
+
+                    label {
+                        display: block;
+                        font-weight: 500;
+                        color: #790313;
+                        margin-bottom: 10px;
+                    }
+
+                    input, textarea {
+                        padding: 15px;
+                        display: block;
+                        width: 100%;
+                        background: #FFFFFF;
+                        box-shadow: 0 0px 2px rgba(165, 171, 255, 0.17);
+                        border-radius: 5px;
+                        border: 0;
+                        font-size: 16px;
+                        color: #000;
+                    }
+
+                    input {
+                        height: 48px;
+                    }
+
+                    textarea {
+                        height: 148px;
+                    }
+                }
+            }
+
+            .form-footer {
+                text-align: center;
+                margin-top: 20px;
+
+                button {
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: #FFFFFF;
+                    text-transform: uppercase;
+                    background: #790313;
+                    border-radius: 5px;
+                    border: 0;
+                    padding: 19px 57px;
+                    @include responsive(767) {
+                        padding: 11px 50px;
+                    }
+
+                    &:hover {
+                        img {
+                            @include transform(translateX(5px));
+                        }
+                    }
+
+                    img {
+                        margin-left: 15px;
+                        @include transition(.3s all);
+                    }
+                }
+            }
+        }
+    }
+
+    .call-wrapper {
+        margin-top: 25px;
+
+        .call-button {
+            display: block;
+            position: relative;
+            height: 88px;
+            background: #193769;
+            border-radius: 100px;
+            @include flexbox();
+            @include align-items(center);
+            @include justify-content(center);
+            text-align: center;
+            max-width: 420px;
+            margin: 0 auto 0 auto;
+            @include responsive(767) {
+                height: 54px;
+                max-width: 255px;
+            }
+
+            .phone-number {
+                font-size: 24px;
+                font-weight: 700;
+                color: #FFFFFF;
+                @include responsive(767) {
+                    font-size: 18px;
+                }
+            }
+
+            .icon {
+                position: absolute;
+                left: -2px;
+                top: -1px;
+                background: #F8F8F8;
+                box-shadow: -2px 4px 4px rgba(136, 136, 136, 0.25), 0px 0px 60px 2px rgba(165, 171, 255, 0.17);
+                width: 91px;
+                height: 91px;
+                border-radius: 50%;
+                @include flexbox();
+                @include align-items(center);
+                @include justify-content(center);
+                @include responsive(767) {
+                    width: 56px;
+                    height: 56px;
+                }
+
+                img {
+                    @include responsive(767) {
+                        max-height: 30px;
+                    }
+                }
+            }
+        }
+    }
+}

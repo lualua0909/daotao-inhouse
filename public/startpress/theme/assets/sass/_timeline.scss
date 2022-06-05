@@ -1,0 +1,176 @@
+.timeline-wrapper {
+    overflow: hidden;
+
+    .section-heading {
+        text-align: center;
+        margin-bottom: 66px;
+
+        .section-title-style-2 {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            max-width: 500px;
+            margin: 0 auto;
+            color: #000000;
+            @include responsive(767) {
+                display: none;
+            }
+        }
+    }
+
+    .timeline-content {
+        max-width: 890px;
+        margin: 0 auto;
+        @include flexbox();
+        @include justify-content(space-between);
+
+        .timeline-left {
+            @include flex-basis(calc(50% - 40px));
+            max-width: calc(50% - 40px);
+            @include responsive(767) {
+                @include flex-basis(calc(50% - 12px));
+                max-width: calc(50% - 12px);
+            }
+        }
+
+        .timeline-center {
+            @include flex-basis(160px);
+            max-width: 160px;
+            position: relative;
+            @include responsive(767) {
+                @include flex-basis(24px);
+                max-width: 24px;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                background: #193769;
+                width: 4px;
+                bottom: 60px;
+                display: block;
+                top: -32px;
+                left: 50%;
+                @include transform(translateX(-50%));
+                @include responsive(767) {
+                    width: 2px;
+                }
+            }
+        }
+
+        .timeline-right {
+            @include flex-basis(calc(50% - 40px));
+            max-width: calc(50% - 40px);
+            padding-top: 98px;
+            @include responsive(767) {
+                @include flex-basis(calc(50% - 12px));
+                max-width: calc(50% - 12px);
+                padding-top: 55px;
+            }
+
+            .timeline-item {
+                &:before {
+                    left: unset;
+                    right: -33px;
+                    @include responsive(767) {
+                        right: -12px;
+                    }
+                }
+
+                &:after {
+                    left: -98px;
+                    right: unset;
+                    @include responsive(767) {
+                        left: -19px;
+                    }
+                }
+            }
+        }
+
+        .timeline-item {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 80px;
+            @include responsive(767) {
+                margin-bottom: 55px;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                width: 335.17px;
+                height: 128px;
+                border: 3px solid #1451BE;
+                box-sizing: border-box;
+                left: -33px;
+                top: -33px;
+                z-index: -1;
+                @include responsive(767) {
+                    width: 125px;
+                    height: 48px;
+                    left: -12px;
+                    top: -12px;
+                }
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                width: 50px;
+                height: 50px;
+                display: block;
+                right: -98px;
+                top: 50%;
+                background-image: url(../images/timeline-icon.png);
+                background-repeat: no-repeat;
+                background-size: 50px 50px;
+                @include transform(translateY(-50%));
+                @include responsive(767) {
+                    width: 13px;
+                    height: 13px;
+                    background-size: 13px 13px;
+                    right: -19px;
+                }
+            }
+
+            .content {
+                background: #FFFFFF;
+                box-shadow: 0 0 100px 2px rgba(112, 119, 213, 0.17);
+                border-radius: 5px;
+                padding: 23px 40px;
+                position: relative;
+                z-index: 1;
+                @include responsive(767) {
+                    background: #DAE8FF;
+                    border-radius: 5px;
+                    padding: 10px 15px;
+                }
+
+                .title {
+                    font-size: 48px;
+                    font-weight: 700;
+                    color: #CB001B;
+                    @include responsive(767) {
+                        font-size: 18px;
+                        line-height: 22px;
+                    }
+                }
+
+                .desc {
+                    font-size: 18px;
+                    line-height: 22px;
+                    font-weight: 700;
+                    color: #686868;
+                    @include responsive(767) {
+                        font-size: 10px;
+                        line-height: 12px;
+                    }
+                }
+            }
+
+        }
+    }
+}

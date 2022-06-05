@@ -1,0 +1,177 @@
+.certificate-wrapper {
+    overflow: hidden;
+    padding: 50px 0;
+    @include responsive(991) {
+        background: #193769;
+        padding: 20px 0 70px 0;
+    }
+
+    .certificate-box {
+        @include flexbox();
+        @include align-items(flex-end);
+        @include flex-wrap(wrap);
+        @include responsive(991) {
+            @include align-items(unset);
+            @include flex-direction(column-reverse);
+        }
+
+        .box-content {
+            @include flex-basis(52%);
+            max-width: 52%;
+            @include responsive(991) {
+                @include flex-basis(100%);
+                max-width: 100%;
+            }
+
+            .content-wrap {
+                background: #790313;
+                padding: 25px 75px 80px 75px;
+                @include responsive(1199) {
+                    padding: 25px 50px 60px 50px;
+                }
+                @include responsive(991) {
+                    background: transparent;
+                    padding: 0;
+                }
+
+                .box-title {
+                    font-size: 64px;
+                    font-weight: 700;
+                    line-height: 78px;
+                    color: #F8F8F8;
+                    margin-bottom: 25px;
+                    @include responsive(1199) {
+                        font-size: 55px;
+                        line-height: 1.2;
+                    }
+                    @include responsive(991) {
+                        font-size: 40px;
+                    }
+                    @include responsive(575) {
+                        font-size: 24px;
+                        line-height: 29px;
+                    }
+                }
+
+                .desc {
+                    line-height: 20px;
+                    letter-spacing: 0.02em;
+                    color: #F8F8F8;
+                    margin-bottom: 35px;
+                    @include responsive(575) {
+                        font-size: 12px;
+                    }
+                }
+
+                .button-wrap {
+                    @include responsive(991) {
+                        text-align: center;
+                    }
+
+                    .action-button {
+                        font-weight: bold;
+                        font-size: 18px;
+                        color: #F8F8F8;
+                        text-transform: uppercase;
+                        background: #193769;
+                        border-radius: 5px;
+                        display: inline-block;
+                        padding: 12px 24px;
+                        @include responsive(991) {
+                            background: #FF3D3D;
+                        }
+                        @include responsive(575) {
+                            font-size: 13px;
+                            padding: 12px 59px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .box-image {
+            @include flex-basis(48%);
+            max-width: 48%;
+            @include responsive(991) {
+                @include flex-basis(100%);
+                max-width: 100%;
+            }
+
+            .images-slideshow {
+                @include responsive(767) {
+                    margin-bottom: 30px;
+                }
+
+                .slick-arrow {
+                    width: 42px;
+                    height: 42px;
+                    background-size: 42px 42px;
+                    background-repeat: no-repeat;
+                    z-index: 1;
+                    @include responsive(575) {
+                        display: none !important;
+                    }
+
+                    &:before {
+                        content: none;
+                    }
+
+                    &.slick-prev {
+                        background-image: url(../images/certificate-prev.png);
+                        left: 20px;
+                    }
+
+                    &.slick-next {
+                        background-image: url(../images/certificate-next.png);
+                        right: 20px;
+                    }
+                }
+
+                .image-box {
+                    border-radius: 10px;
+                    height: 595px;
+                    overflow: hidden;
+                    position: relative;
+
+                    .content-wrapper {
+                        position: absolute;
+                        background: rgba(26, 31, 91, 0.76);
+                        max-width: 375px;
+                        padding: 30px;
+                        width: 100%;
+                        top: 50%;
+                        left: 50%;
+                        @include transform(translate(-50%, -50%));
+                        @include responsive(575) {
+                            width: 80%;
+                        }
+
+                        h4 {
+                            font-weight: bold;
+                            font-size: 20px;
+                            line-height: 24px;
+                            text-align: center;
+                            color: #F8F8F8;
+                            @include responsive(767) {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+
+                    @include responsive(767) {
+                        height: 500px;
+                    }
+                    @include responsive(575) {
+                        height: 280px;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover
+                    }
+                }
+            }
+        }
+    }
+}

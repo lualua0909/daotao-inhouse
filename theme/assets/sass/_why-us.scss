@@ -1,0 +1,185 @@
+.why-us-wrapper {
+    .section-heading {
+        @include responsive(575) {
+            text-align: center;
+        }
+
+        .section-title-style-2 {
+            margin-bottom: 27px;
+            @include responsive(767) {
+                padding: 0;
+            }
+            @include responsive(575) {
+                font-size: 30px;
+                display: inline-block
+            }
+
+            &:before {
+                @include responsive(767) {
+                    content: none;
+                }
+            }
+        }
+
+        .subtitle {
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: 0.02em;
+            color: #000000;
+            font-weight: 600;
+            @include responsive(767) {
+                font-size: 12px;
+                line-height: 15px;
+                text-align: center;
+                color: #193769;
+            }
+        }
+    }
+
+    .why-us-img-wrapper {
+        position: relative;
+        z-index: 1;
+        @include responsive(767) {
+            display: none;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            background: #0843A6;
+            border-radius: 10px;
+            display: block;
+            width: 59px;
+            top: 23px;
+            left: 0;
+            bottom: -23px;
+            z-index: -1;
+        }
+
+        .why-us-img {
+            height: 313px;
+            margin-left: 30px;
+            position: relative;
+            z-index: 1;
+
+            &:before, &:after {
+                content: '';
+                z-index: -1;
+                position: absolute;
+                width: 128px;
+                height: 82px;
+                background-image: url(../images/dots.png);
+                background-size: 128px 92px;
+            }
+
+            &:before {
+                bottom: -68px;
+                left: -65px;
+            }
+
+            &:after {
+                top: -35px;
+                right: -50px;
+            }
+
+            @include responsive(1199) {
+                height: auto;
+                margin-bottom: 50px;
+            }
+
+            img {
+                border-radius: 10px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                @include responsive(1199) {
+                    height: auto;
+                    object-fit: unset;
+                }
+            }
+        }
+    }
+
+    .why-us-card {
+        box-shadow: 0 0 60px 2px rgba(165, 171, 255, 0.17);
+        border-radius: 10px;
+        background: #FFFFFF;
+        overflow: hidden;
+        min-width: 267px;
+        min-height: 251px;
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+        margin-bottom: 30px;
+        @include responsive(575) {
+            background: #010D35;
+        }
+
+        &:before, &:after {
+            content: '';
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+        }
+
+        &:before {
+            width: 111px;
+            height: 111px;
+            left: -8px;
+            top: -20px;
+            background: rgba(26, 34, 131, 0.17);
+            @include responsive(575) {
+                background: rgba(255, 255, 255, 0.17);
+            }
+        }
+
+        &:after {
+            width: 152px;
+            height: 152px;
+            left: -28px;
+            top: -37px;
+            background: rgba(162, 164, 187, 0.31);
+            @include responsive(575) {
+                background: rgba(255, 0, 46, 0.31);
+            }
+        }
+
+        .number {
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 48px;
+            color: #193769;
+            margin-bottom: 15px;
+            @include responsive(575) {
+                color: #f8f8f8;
+            }
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            color: #CB001B;
+            margin-bottom: 20px;
+            @include responsive(575) {
+                color: #f8f8f8;
+            }
+        }
+
+        .card-content {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 25px;
+            color: #515050;
+            @include responsive(575) {
+                color: #f8f8f8;
+                font-size: 12px;
+                line-height: 15px;
+                letter-spacing: 0.02em;
+            }
+        }
+    }
+}

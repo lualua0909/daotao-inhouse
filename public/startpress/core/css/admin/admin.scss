@@ -1,0 +1,263 @@
+@import "../../sass/mixins-master";
+@import "../../sass/media";
+@import "../../sass/modal";
+@import "../../sass/pagination";
+@import "../../sass/nav_menus";
+
+.row-actions {
+    color: #dcdcde;
+    font-size: 13px;
+    padding: 2px 0 0;
+    position: relative;
+    list-style-type: none;
+
+    li {
+        display: inline-block;
+
+        &:after {
+            content: '|';
+        }
+
+        &:last-child {
+            &:after {
+                content: none;
+            }
+        }
+
+        &.delete {
+            a {
+                color: #dc3545;
+
+                &:hover {
+                    color: #c82333;
+                }
+            }
+        }
+
+        a {
+            color: #17a2b8;
+
+            &:hover {
+                color: #138496;
+            }
+        }
+    }
+}
+
+tr {
+    &:hover {
+        .row-actions {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    .row-actions {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.taxonomy-check-list {
+    max-height: 195px;
+    overflow-x: auto;
+
+    .checkbox-item {
+        .children {
+            padding-left: 14px;
+        }
+    }
+}
+
+.featured-image-preview {
+    margin-bottom: 20px;
+
+    img {
+        width: 100%;
+        height: auto;
+        vertical-align: middle;
+    }
+}
+
+.capitalize-first-letter {
+    text-transform: lowercase;
+
+    &:first-letter {
+        text-transform: capitalize
+    }
+}
+
+a {
+    color: #17a2b8;
+
+    &:hover {
+        color: #138496;
+    }
+}
+
+.taxonomy-list {
+    word-wrap: break-word;
+    max-width: 160px;
+    white-space: normal !important; // To consider whitespace.
+    a {
+        &:after {
+            content: ', ';
+        }
+
+        &:last-child {
+            &:after {
+                content: none;
+            }
+        }
+    }
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active, .sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
+    background-color: #17a2b8;
+}
+
+.brand-link {
+    font-size: 0;
+    color: transparent;
+
+    img.brand-image {
+        float: unset;
+        margin: 0;
+    }
+}
+
+.meta-box-disabled {
+    opacity: .5;
+}
+
+span.post-status {
+
+}
+
+ul.post-status {
+    list-style: none;
+    margin: 15px 0;
+    padding: 0;
+    font-size: 13px;
+    color: #666;
+    @include flexbox();
+
+    li {
+        margin-right: 5px;
+
+        &.active {
+            color: #000;
+
+            a {
+                color: #000;
+                font-weight: 500;
+            }
+        }
+
+        &:last-child {
+            &:after {
+                content: none;
+            }
+        }
+
+        &:after {
+            content: "|";
+            margin-left: 5px;
+        }
+    }
+}
+
+.dd-item{
+    position: relative;
+    &:hover {
+        .remove {
+            opacity: 1;
+        }
+    }
+    .remove {
+        opacity: 0;
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        display: block;
+        top: -8px;
+        right: -8px;
+        z-index: 10;
+        border-radius: 20px;
+        cursor: pointer;
+        color: #dc3545;
+        background: #fff;
+        font-size: 16px;
+    }
+}
+
+.gallery-content, #welcome_img_preview, .img-preview {
+    list-style-type: none;
+    margin: 0 -8px 0 -8px;
+    padding: 0;
+    @include flexbox();
+    @include flex-wrap(wrap);
+
+    .gallery-item {
+        @include flex-basis(calc(100% / 4));
+        height: 143.5px;
+        position: relative;
+
+        &:hover {
+            .remove {
+                opacity: 1;
+            }
+        }
+
+        .remove {
+            opacity: 0;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            display: block;
+            top: 0;
+            right: 0;
+            z-index: 10;
+            border-radius: 20px;
+            cursor: pointer;
+            color: #dc3545;
+            background: #fff;
+            font-size: 16px;
+        }
+
+        .attachment-preview {
+            padding: 8px;
+            width: 100%;
+            height: 100%;
+
+            .thumbnail {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+                box-shadow: inset 0 0 15px rgb(0 0 0 / 10%), inset 0 0 0 1px rgb(0 0 0 / 5%);
+                background: #eee;
+
+                &:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 10%);
+                    overflow: hidden;
+                }
+
+                img {
+                    position: absolute;
+                    max-width: 100%;
+                    top: 50%;
+                    left: 50%;
+                    @include transform(translate(-50%, -50%));
+                }
+            }
+        }
+    }
+}

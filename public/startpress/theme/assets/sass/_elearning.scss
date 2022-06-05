@@ -1,0 +1,129 @@
+.elearning-wrapper {
+    overflow: hidden;
+    background-image: url(../images/elerning-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 -120px;
+    padding-top: 10px;
+    padding-bottom: 100px;
+    @include responsive(991) {
+        padding-bottom: 30px;
+        padding-top: 0;
+    }
+
+    .section-title-style-2 {
+        margin-bottom: 13px;
+    }
+
+    .subtitle {
+        max-width: 570px;
+        line-height: 20px;
+        color: #373737;
+        padding-left: 40px;
+        @include responsive(575) {
+            display: none;
+        }
+    }
+
+    .elearning-carousel-wrapper {
+        .elearning-carousel {
+            @include flexbox();
+            @include flex-wrap(wrap);
+            @include align-items(center);
+            margin: 0 -18px;
+            @include responsive(1600) {
+                margin: 0 -10px;
+            }
+            @include responsive(991) {
+                margin: 0;
+            }
+
+            .box-wrapper {
+                @include flex-basis(20%);
+                max-width: 20%;
+                padding: 0 18px;
+                @include responsive(1600) {
+                    padding: 0 10px;
+                }
+                @include responsive(991) {
+                    @include flex-basis(100%);
+                    max-width: 100%;
+                    padding: 0 15px;
+                    margin-bottom: 30px;
+                }
+            }
+
+            .elearning-box {
+                background: #FFFFFF;
+                box-shadow: 0 0 100px 2px rgba(112, 119, 213, 0.17);
+                border-radius: 10px;
+                @include transition(.3s all);
+                @include responsive(767) {
+                    max-width: 200px;
+                    margin: 0 auto;
+                }
+
+                &:hover {
+                    @include transform(scale(1.1));
+                }
+
+                .box-img {
+                    text-align: center;
+                    padding: 34px 15px;
+                    @include responsive(767) {
+                        padding: 20px 15px;
+                    }
+
+                    img {
+                        max-height: 120px;
+                        max-width: 120px;
+                        width: auto;
+                        height: 100%;
+                        margin: auto;
+                        @include responsive(1200) {
+                            max-height: 70px;
+                            max-width: 70px;
+                        }
+                        @include responsive(767) {
+                            max-height: 65px;
+                            max-width: 65px;
+                        }
+                    }
+                }
+
+                .box-content {
+                    text-align: center;
+                    background: #1B5285;
+                    border-radius: 10px;
+                    padding: 28px 50px;
+                    @include responsive(1200) {
+                        padding: 28px 15px;
+                    }
+                    @include responsive(767) {
+                        padding: 12px 15px;
+                    }
+
+                    .box-title {
+                        font-weight: 700;
+                        letter-spacing: 0.02em;
+                        font-size: 20px;
+                        line-height: 24px;
+                        text-transform: uppercase;
+                        @include responsive(1600) {
+                            font-size: 16px;
+                            line-height: 1.2;
+                        }
+                        @include responsive(767) {
+                            font-size: 14px;
+                            line-height: 17px;
+                        }
+
+                        a {
+                            color: #F8F8F8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

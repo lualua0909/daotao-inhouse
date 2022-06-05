@@ -1,0 +1,157 @@
+.media-wrap {
+    ul.attachments {
+        list-style-type: none;
+        margin: 0 -8px 0 -8px;
+        padding: 0;
+        @include flexbox();
+        @include flex-wrap(wrap);
+
+        li.attachment {
+            @include flex-basis(10%);
+            @include responsive(1499) {
+                @include flex-basis(calc(100% / 8));
+            }
+            @include responsive(1399) {
+                @include flex-basis(calc(100% / 7));
+            }
+            @include responsive(1199) {
+                @include flex-basis(calc(100% / 5));
+            }
+            @include responsive(767) {
+                @include flex-basis(calc(100% / 4));
+            }
+            @include responsive(599) {
+                @include flex-basis(calc(100% / 2));
+            }
+
+            .attachment-preview {
+                padding: 8px;
+                width: 100%;
+                height: 100%;
+
+                .thumbnail {
+                    cursor: pointer;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    position: relative;
+                    box-shadow: inset 0 0 15px rgb(0 0 0 / 10%), inset 0 0 0 1px rgb(0 0 0 / 5%);
+                    background: #eee;
+
+                    &:after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        box-shadow: inset 0 0 0 1px rgb(0 0 0 / 10%);
+                        overflow: hidden;
+                    }
+
+                    img {
+                        position: absolute;
+                        max-width: 100%;
+                        top: 50%;
+                        left: 50%;
+                        @include transform(translate(-50%, -50%));
+                    }
+                }
+            }
+        }
+    }
+}
+
+.attachment-details-modal {
+    .attachment-preview-wrap {
+        text-align: center;
+
+        img {
+            vertical-align: middle;
+            max-width: 100%;
+            height: auto;
+            background-image: linear-gradient(
+                    45deg, #c4c4c4 25%, transparent 25%, transparent 75%, #c4c4c4 75%, #c4c4c4), linear-gradient(
+                    45deg, #c4c4c4 25%, transparent 25%, transparent 75%, #c4c4c4 75%, #c4c4c4);
+            background-position: 0 0, 10px 10px;
+            background-size: 20px 20px;
+        }
+    }
+
+    .attachment-details-wrap {
+        .attachment-info {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                margin-bottom: 5px;
+
+                span {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+.attachment-select-modal {
+
+    .attachment-preview-wrap {
+        max-width: 120px;
+        max-height: 120px;
+
+        img {
+            vertical-align: middle;
+            display: block;
+            max-width: 120px;
+            max-height: 120px;
+            margin: 0 auto;
+            background-image: linear-gradient(
+                    45deg, #c4c4c4 25%, transparent 25%, transparent 75%, #c4c4c4 75%, #c4c4c4), linear-gradient(
+                    45deg, #c4c4c4 25%, transparent 25%, transparent 75%, #c4c4c4 75%, #c4c4c4);
+            background-position: 0 0, 10px 10px;
+            background-size: 20px 20px;
+        }
+    }
+
+    .attachment-details-wrap {
+        .attachment-info {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                margin-bottom: 5px;
+
+                span {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    .media-wrap {
+        ul.attachments {
+            li.attachment {
+                &.selected {
+                    .attachment-preview {
+                        position: relative;
+
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            top: 3px;
+                            left: 3px;
+                            right: 3px;
+                            bottom: 3px;
+                            display: block;
+                            border: 4px solid #17a2b8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

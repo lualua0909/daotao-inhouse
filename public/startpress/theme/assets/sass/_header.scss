@@ -1,0 +1,360 @@
+$primary-color: #fff;
+
+.header-wrapper {
+    position: relative;
+    z-index: 9999;
+    background: #fff;
+    @include responsive(575) {
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .header-top {
+        padding: 21px 0;
+        @include responsive(991) {
+            padding: 2px 0;
+        }
+        @include responsive(991) {
+            &.nav-fixed {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 9999;
+                box-shadow: 0 -12px 20px rgba(0, 0, 0, 1);
+                bottom: unset;
+                background-image: url(../images/welcome-background.png);
+                background-position: center;
+                background-repeat: no-repeat;
+
+                .header-bottom-container {
+                    padding: 5px 0;
+                    @include responsive(991) {
+                        padding: 15px 0;
+                    }
+
+                    .logo-wrap {
+                        img {
+                            max-height: 40px;
+                            max-width: 140px;
+                            @include responsive(767) {
+                                max-height: 30px;
+                                max-width: 105px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .header-top-container {
+            @include flexbox();
+            @include align-items(center);
+            @include justify-content(space-between);
+
+            .logo-wrapper {
+                img {
+                    max-width: 168px;
+                    height: auto;
+                    @include responsive(991) {
+                        max-width: 105px;
+                    }
+                }
+            }
+
+            .info-wrapper {
+                @include flexbox();
+                @include align-items(center);
+                @include justify-content(space-between);
+
+                .hotline {
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #CB001B;
+                    @include responsive(991) {
+                        display: none;
+                    }
+
+                    a {
+                        color: inherit;
+                    }
+                }
+
+                .social-list {
+                    @include flexbox();
+                    @include justify-content(flex-end);
+
+                    li {
+                        margin-left: 30px;
+                        @include responsive(991) {
+                            margin-left: 15px;
+                        }
+
+                        &.mobile-menu {
+                            display: none;
+
+                            a {
+                                background: transparent;
+                                box-shadow: none;
+                                width: auto;
+                                height: auto;
+
+                                img {
+                                    width: 27px;
+                                    height: auto;
+                                    vertical-align: middle;
+                                }
+                            }
+
+                            @include responsive(991) {
+                                @include flexbox();
+                                @include align-items(center);
+                                @include justify-content(center);
+                            }
+                        }
+
+                        a {
+                            width: 44px;
+                            height: 44px;
+                            background: #FFFFFF;
+                            box-shadow: 0 0 10px rgba(192, 192, 192, 0.25);
+                            @include flexbox();
+                            @include align-items(center);
+                            @include justify-content(center);
+                            border-radius: 50%;
+                            @include responsive(991) {
+                                width: 22px;
+                                height: 22px;
+                                img {
+                                    max-height: 14px;
+                                    max-width: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .header-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #931D0D;
+        @include transform(translateY(100%));
+
+        &.nav-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            box-shadow: 0 -12px 20px rgba(0, 0, 0, 1);
+            bottom: unset;
+
+            .header-bottom-container {
+                padding: 5px 0;
+                @include responsive(991) {
+                    padding: 15px 0;
+                }
+
+                .logo-wrap {
+                    img {
+                        max-height: 40px;
+                        max-width: 140px;
+                        @include responsive(767) {
+                            max-height: 30px;
+                            max-width: 105px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .primary-mmenu {
+            height: 0;
+            overflow: hidden;
+            font-size: 0;
+            color: transparent;
+            visibility: hidden;
+        }
+
+        .primary-menu {
+            width: 100%;
+            @include responsive(991) {
+                display: none;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            > ul {
+                display: flex;
+                align-items: center;
+                @include flexbox();
+                @include align-items(center);
+                @include justify-content(flex-end);
+
+                > li.current-menu-item {
+                    > a {
+                        color: $primary-color;
+
+                        &:after {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                > li {
+                    position: relative;
+
+                    > a {
+                        display: inline-block;
+                        transition: 0.3s all;
+                        font-weight: 700;
+                        padding: 15px;
+                        font-size: 18px;
+                        color: #fff;
+                        text-align: center;
+                        @include transform(0.3s all);
+                        @include responsive(1199) {
+                            padding: 15px 5px;
+                        }
+
+                        &:after {
+                            content: '';
+                            width: 80%;
+                            height: 1px;
+                            display: block;
+                            background: $primary-color;
+                            margin: 0 auto;
+                            opacity: 0;
+                        }
+
+                        &:hover {
+                            color: $primary-color;
+                        }
+                    }
+
+                    &:last-child {
+                        > ul {
+                            right: 0;
+                            left: unset;
+                        }
+                    }
+
+                    > ul {
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+
+            ul {
+                li {
+                    position: relative;
+                    text-align: center;
+
+                    ul {
+                        visibility: hidden;
+                        position: absolute;
+                        opacity: 0;
+                        top: 50px;
+                        left: 0;
+                        min-width: 210px;
+                        max-width: 300px;
+                        margin-left: 0;
+                        background-color: #fff;
+                        @include transition(.3s ease-in-out);
+                        @include transform(translate(0, 20px));
+                        padding: 10px 0;
+
+                        li {
+                            text-align: left;
+
+                            a {
+                                padding: 10px 20px;
+                                text-transform: none;
+                                display: block;
+                                font-size: 14px;
+                                color: #193769;
+
+                                &:hover {
+                                    color: #790313;
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover {
+
+                        > ul {
+                            visibility: visible;
+                            z-index: 999;
+                            opacity: 1;
+                            @include transform(translate(0));
+
+                            li {
+                                ul {
+                                    top: 0;
+                                    width: auto;
+                                    left: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.animated {
+    -webkit-animation-duration: .4s;
+    animation-duration: .4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
